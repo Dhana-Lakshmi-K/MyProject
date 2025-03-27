@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Playground</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .control-box {
+            text-align: center;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin: 10px auto;
+            background-color: #dcdcdc;
+        }
+        /* Animations */
+        .bounce {
+            animation: bounce 2s infinite;
+            background-color: #ff6347;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+        .rotate {
+            animation: rotate 3s infinite linear;
+            background-color: #8a2be2;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .pulse {
+            animation: pulse 1.5s infinite;
+            background-color: #ff4500;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Animation Playground</h1>
+    <p>Click the buttons to control each animation!</p>
+    <div class="container">
+        <!-- Bounce Box -->
+        <div class="control-box">
+            <div id="box1" class="box"></div>
+            <button onclick="document.getElementById('box1').classList.add('bounce')">Start Bounce</button>
+            <button onclick="document.getElementById('box1').classList.remove('bounce')">Stop Bounce</button>
+        </div>
+        <!-- Rotate Box -->
+        <div class="control-box">
+            <div id="box2" class="box"></div>
+            <button onclick="document.getElementById('box2').classList.add('rotate')">Start Rotate</button>
+            <button onclick="document.getElementById('box2').classList.remove('rotate')">Stop Rotate</button>
+        </div>
+        <!-- Pulse Box -->
+        <div class="control-box">
+            <div id="box3" class="box"></div>
+            <button onclick="document.getElementById('box3').classList.add('pulse')">Start Pulse</button>
+            <button onclick="document.getElementById('box3').classList.remove('pulse')">Stop Pulse</button>
+        </div>
+    </div>
+</body>
+</html>
